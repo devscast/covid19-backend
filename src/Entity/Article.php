@@ -6,7 +6,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(collectionOperations={"get"}, itemOperations={"get"})
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
 class Article
@@ -45,7 +45,7 @@ class Article
 
     public function __toString()
     {
-       return $this->getName();
+        return $this->getName();
     }
 
     public function getId(): ?int
