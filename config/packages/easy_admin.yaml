@@ -1,0 +1,7 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        - App\Entity\Source
+        - App\Entity\Image
+        - App\Entity\Article
+        - App\Entity\User
