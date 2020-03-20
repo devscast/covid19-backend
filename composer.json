@@ -1,8 +1,9 @@
 {
+    "name": "devscast/covid19backend",
     "type": "project",
-    "license": "proprietary",
+    "license": "CC-BY-NC-SA-4.0",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.4.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
@@ -32,7 +33,8 @@
         "symfony/twilio-notifier": "5.0.*",
         "symfony/validator": "5.0.*",
         "symfony/web-link": "5.0.*",
-        "symfony/yaml": "5.0.*"
+        "symfony/yaml": "5.0.*",
+      "ext-json": "*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
