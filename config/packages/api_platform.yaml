@@ -1,7 +1,8 @@
 api_platform:
     collection:
         pagination:
-            client_enabled: false
+            client_enabled: true
+            enabled_parameter_name: pagination # optional
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:
