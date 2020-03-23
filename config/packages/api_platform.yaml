@@ -1,4 +1,9 @@
 api_platform:
+    title: Covid19 Backend API
+    description: 'Backend application of the covid19 DRC project, a project of Congolese developers around the world in the fight against coronavirus. The Client or frontend App is at : https://github.com/devscast/covid19-client'
+    version: 1.0.0
+    show_webby: false
+
     collection:
         pagination:
             client_enabled: true
