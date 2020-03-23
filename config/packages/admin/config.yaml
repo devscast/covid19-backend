@@ -1,0 +1,11 @@
+easy_admin:
+    site_name: '<strong>Covid19</strong> Administration'
+    user:
+        display_name: true
+        display_avatar: false
+    design:
+        brand_color: '#14da94'
+        assets:
+            favicon:
+                path: 'https://www.countryflags.io/CD/flat/64.png'
+                mime_type: 'image/png'

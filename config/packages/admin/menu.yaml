@@ -1,0 +1,12 @@
+easy_admin:
+    design:
+        menu:
+            - { label: 'API' }
+            - { entity: 'Alertes', icon: 'asterisk' }
+            - { entity: 'Cases', icon: 'asterisk' }
+            - { entity: 'Contacts', icon: 'asterisk' }
+            - { label: 'Information' }
+            - { entity: 'Articles', icon: 'asterisk' }
+
+
+

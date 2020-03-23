@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        Cases:
+            class: App\Entity\Cases
+            disabled_actions: ['delete']

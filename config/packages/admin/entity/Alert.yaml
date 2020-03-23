@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+        Alertes:
+            class: App\Entity\Alert
+            disabled_actions: ['delete', 'new']
+            form:
+                fields:
+                    - {property: 'number'}
+                    - {property: 'symptoms'}
+                    - {property: 'infos'}
+                    - {property: 'lat'}
+                    - {property: 'lng'}
+                    -   property: 'status'
+                        type: Symfony\Component\Form\Extension\Core\Type\ChoiceType
+                        type_options:
+                            mapped: true
+                            expanded: true
+                            multiple: false
+                            choices: {suspect: 'Suspect', confirmé: 'Confirmé', mort: 'Mort', rétabli: 'Rétabli'}
+
