@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(collectionOperations={"get", "post"}, itemOperations={"get"})
@@ -48,10 +49,17 @@ class Alert
      */
     private $lng;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Choice({"Suspect", "Confirmé", "Mort", "Rétabli"})
+     */
+    private $status;
+
 
     public function __construct()
     {
         $this->created_at = new \DateTime('now');
+        $this->status = "Suspect";
     }
 
     public function getId(): ?int
@@ -127,6 +135,18 @@ class Alert
     public function setLng(?string $lng): self
     {
         $this->lng = $lng;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?string $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }
