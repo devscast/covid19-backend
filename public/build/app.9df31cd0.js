@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["app"],{XENs:function(n,o,s){},ng4s:function(n,o,s){"use strict";s.r(o);s("XENs");console.log("Hello World")}},[["ng4s","runtime"]]]);
