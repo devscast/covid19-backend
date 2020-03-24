@@ -23,6 +23,7 @@ class Alert
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Length(min="10", max="13")
      */
     private ?string $number = null;
 
@@ -45,12 +46,14 @@ class Alert
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank()
+     * @Assert\Regex("#^((\-?|\+?)?\d+(\.\d+)?)$#")
      */
     private ?string $lat = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank()
+     * @Assert\Regex("#^((\-?|\+?)?\d+(\.\d+)?)$#")
      */
     private ?string $lng = null;
 
