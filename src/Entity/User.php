@@ -90,7 +90,7 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        $roles = explode('|', $this->roles);
+        $roles = explode('|', "ROLE_USER|{$this->roles}");
         return array_unique($roles);
     }
 
