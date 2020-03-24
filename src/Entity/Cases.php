@@ -23,20 +23,23 @@ class Cases
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Regex("#^\d+$#")
      */
-    private ?int $confirmed = null;
+    private ?string $confirmed = null;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Regex("#^\d+$#")
      */
-    private ?int $recovered = null;
+    private ?string $recovered = null;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Regex("#^\d+$#")
      */
-    private ?int $deaths = null;
+    private ?string $deaths = null;
 
     /**
      * @ORM\Column(type="datetime")
