@@ -11,4 +11,4 @@ cache:
 
 script:
     - php vendor/bin/phpcs -s
-    - php bin/console phpunit
+    - php bin/phpunit
