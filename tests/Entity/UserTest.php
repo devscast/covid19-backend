@@ -7,6 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Class UserTest
+ * @package App\Tests\Entity
+ * @author bernard-ng <ngandubernard@gmail.com>
+ */
 class UserTest extends KernelTestCase
 {
     use EntityTestCaseTrait;
