@@ -1,5 +1,7 @@
 # covid19-backend
 ## Description
+[![Build Status](https://travis-ci.com/devscast/covid19-backend.svg?branch=master)](https://travis-ci.com/devscast/covid19-backend)
+
 Backend application of the covid19 DRC project, a project of Congolese developers around the world in the fight against coronavirus.
 
 The Client or frontend App is at : https://github.com/devscast/covid19-client
