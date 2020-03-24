@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class MainController
  * @package App\Controller
+ * @Route(schemes={"HTTP", "HTTPS"})
  * @author bernard-ng <ngandubernard@gmail.com>
  */
 class MainController extends AbstractController
@@ -20,6 +21,6 @@ class MainController extends AbstractController
      */
     public function index(): RedirectResponse
     {
-        return $this->redirect('/admin');
+        return $this->redirectToRoute('easyadmin');
     }
 }
