@@ -2,3 +2,15 @@ easy_admin:
     entities:
         Articles:
             class: App\Entity\Article
+            form:
+                fields:
+                    - {property: name}
+                    - {property: link}
+                    - {property: image}
+                    -   property: 'type'
+                        type: Symfony\Component\Form\Extension\Core\Type\ChoiceType
+                        type_options:
+                            mapped: true
+                            expanded: true
+                            multiple: false
+                            choices: {post: 'post', video: 'video'}
