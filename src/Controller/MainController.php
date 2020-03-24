@@ -3,16 +3,23 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class MainController
+ * @package App\Controller
+ * @author bernard-ng <ngandubernard@gmail.com>
+ */
 class MainController extends AbstractController
 {
     /**
-     * @Route("", name="app_home")
+     * @Route("", name="app_home", methods={"GET"})
+     * @return RedirectResponse
+     * @author bernard-ng <ngandubernard@gmail.com>
      */
-    public function index(): JSONResponse
+    public function index(): RedirectResponse
     {
-        return new JSONResponse(['hello world']);
+        return $this->redirect('/admin');
     }
 }

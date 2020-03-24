@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource(collectionOperations={"get", "post"}, itemOperations={"get"})
+ * @ApiResource(collectionOperations={"get", "post"})
  * @ORM\Entity(repositoryClass="App\Repository\AlertRepository")
  */
 class Alert
@@ -17,61 +18,83 @@ class Alert
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
-    private $number;
+    private ?string $number = null;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
-    private $symptoms;
+    private ?string $symptoms = null;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $infos;
+    private ?string $infos = null;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $created_at;
+    private ?DateTimeInterface $created_at = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
      */
-    private $lat;
+    private ?string $lat = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
      */
-    private $lng;
+    private ?string $lng = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
      * @Assert\Choice({"Suspect", "Confirmé", "Mort", "Rétabli"})
      */
-    private $status;
+    private ?string $status = null;
 
 
+    /**
+     * Alert constructor.
+     * @throws \Exception
+     */
     public function __construct()
     {
         $this->created_at = new \DateTime('now');
         $this->status = "Suspect";
     }
 
+    /**
+     * @return int|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getNumber(): ?string
     {
         return $this->number;
     }
 
+    /**
+     * @param string $number
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setNumber(string $number): self
     {
         $this->number = $number;
@@ -79,11 +102,20 @@ class Alert
         return $this;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getSymptoms(): ?string
     {
         return $this->symptoms;
     }
 
+    /**
+     * @param string $symptoms
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setSymptoms(string $symptoms): self
     {
         $this->symptoms = $symptoms;
@@ -91,11 +123,20 @@ class Alert
         return $this;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getInfos(): ?string
     {
         return $this->infos;
     }
 
+    /**
+     * @param string|null $infos
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setInfos(?string $infos): self
     {
         $this->infos = $infos;
@@ -103,23 +144,41 @@ class Alert
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    /**
+     * @return DateTimeInterface|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    /**
+     * @param DateTimeInterface $created_at
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setCreatedAt(DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
 
         return $this;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getLat(): ?string
     {
         return $this->lat;
     }
 
+    /**
+     * @param string|null $lat
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setLat(?string $lat): self
     {
         $this->lat = $lat;
@@ -127,11 +186,20 @@ class Alert
         return $this;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getLng(): ?string
     {
         return $this->lng;
     }
 
+    /**
+     * @param string|null $lng
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setLng(?string $lng): self
     {
         $this->lng = $lng;
@@ -139,11 +207,20 @@ class Alert
         return $this;
     }
 
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function getStatus(): ?string
     {
         return $this->status;
     }
 
+    /**
+     * @param string|null $status
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
     public function setStatus(?string $status): self
     {
         $this->status = $status;
