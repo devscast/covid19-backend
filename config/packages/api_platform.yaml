@@ -3,14 +3,40 @@ api_platform:
     description: 'Backend application of the covid19 DRC project, a project of Congolese developers around the world in the fight against coronavirus. The Client or frontend App is at : https://github.com/devscast/covid19-client'
     version: 1.0.0
     show_webby: false
+    name_converter: ~
+    path_segment_name_generator: 'api_platform.path_segment_name_generator.underscore'
+    allow_plain_identifiers: false
+    enable_swagger: true
+    enable_swagger_ui: true
+    enable_re_doc: false
+    enable_entrypoint: false
+    enable_docs: false
 
     collection:
+        exists_parameter_name: 'exists'
+        order: 'ASC'
+        order_parameter_name: 'order'
         pagination:
+            enabled: true
+            partial: false
+            client_items_per_page: false
+            client_partial: false
+            items_per_page: 30
+            maximum_items_per_page: 30
+            page_parameter_name: 'page'
+            enabled_parameter_name: 'pagination'
+            items_per_page_parameter_name: 'itemsPerPage'
+            partial_parameter_name: 'partial'
             client_enabled: true
-            enabled_parameter_name: pagination # optional
+
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:
         json: ['application/merge-patch+json']
     swagger:
         versions: [3]
+    formats:
+        json:
+            mime_types: ['application/json']
+        html:
+            mime_types: ['text/html']

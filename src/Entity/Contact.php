@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ApiResource(
  *     collectionOperations={"get", "post"},
+ *     itemOperations={"get"},
  *     attributes={"pagination_client_enabled"=true}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
