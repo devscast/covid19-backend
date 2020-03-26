@@ -21,6 +21,6 @@ class MainController extends AbstractController
      */
     public function index(): RedirectResponse
     {
-        return $this->redirectToRoute('easyadmin');
+        return $this->redirectToRoute('easyadmin', [], 301);
     }
 }
