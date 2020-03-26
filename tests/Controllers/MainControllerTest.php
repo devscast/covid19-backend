@@ -13,12 +13,19 @@ use Symfony\Component\HttpFoundation\Response;
 class MainControllerTest extends WebTestCase
 {
 
-    public function testRedirectToAdmin()
+    public function testRedirectToAdmin(): void
     {
         $client = self::createClient();
         $client->request('GET', '/');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_MOVED_PERMANENTLY);
         $this->assertResponseHasHeader('Location');
+    }
+
+    public function testAdminIsRestricted(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/admin');
+        $this->assertResponseRedirects('/login', 302);
     }
 }
