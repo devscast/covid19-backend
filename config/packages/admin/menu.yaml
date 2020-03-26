@@ -5,6 +5,7 @@ easy_admin:
             - { entity: 'Alertes', icon: 'asterisk' }
             - { entity: 'Cases', icon: 'asterisk' }
             - { entity: 'Contacts', icon: 'asterisk' }
+            - { entity: 'Doctors', icon: 'asterisk' }
             - { label: 'Information' }
             - { entity: 'Articles', icon: 'asterisk' }
 

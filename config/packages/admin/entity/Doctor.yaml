@@ -1,0 +1,4 @@
+easy_admin:
+    entities:
+        Doctors:
+            class: App\Entity\Doctor
