@@ -37,6 +37,9 @@
     "doctrine/common": {
         "version": "2.12.0"
     },
+    "doctrine/data-fixtures": {
+        "version": "1.4.2"
+    },
     "doctrine/dbal": {
         "version": "v2.10.1"
     },
@@ -53,6 +56,18 @@
             "config/packages/prod/doctrine.yaml",
             "src/Entity/.gitignore",
             "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "fc52d86631a6dfd9fdf3381d0b7e3df2069e51b3"
+        },
+        "files": [
+            "src/DataFixtures/AppFixtures.php"
         ]
     },
     "doctrine/doctrine-migrations-bundle": {
@@ -123,6 +138,9 @@
     "fig/link-util": {
         "version": "1.1.0"
     },
+    "fzaninotto/faker": {
+        "version": "v1.9.1"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -141,8 +159,27 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.0.1"
     },
+    "liip/test-fixtures-bundle": {
+        "version": "1.7.0"
+    },
     "monolog/monolog": {
         "version": "2.0.2"
+    },
+    "myclabs/deep-copy": {
+        "version": "1.9.5"
+    },
+    "nelmio/alice": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "0b9900ece737bec7752e4155c0164639dd9b0cb0"
+        },
+        "files": [
+            "config/packages/dev/nelmio_alice.yaml",
+            "config/packages/test/nelmio_alice.yaml"
+        ]
     },
     "nelmio/cors-bundle": {
         "version": "1.5",
@@ -194,6 +231,18 @@
     },
     "psr/log": {
         "version": "1.1.2"
+    },
+    "sebastian/comparator": {
+        "version": "4.0.0"
+    },
+    "sebastian/diff": {
+        "version": "4.0.0"
+    },
+    "sebastian/exporter": {
+        "version": "4.0.0"
+    },
+    "sebastian/recursion-context": {
+        "version": "4.0.0"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -616,6 +665,15 @@
     },
     "symfony/yaml": {
         "version": "v5.0.5"
+    },
+    "theofidry/alice-data-fixtures": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
+        }
     },
     "twig/extra-bundle": {
         "version": "v3.0.3"

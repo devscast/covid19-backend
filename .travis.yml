@@ -11,4 +11,5 @@ cache:
 
 script:
     - php vendor/bin/phpcs -s
+    - php bin/console doctrine:schema:update --env=test --force
     - php bin/phpunit

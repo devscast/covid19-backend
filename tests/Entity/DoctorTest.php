@@ -3,6 +3,7 @@
 namespace App\Tests\Entity;
 
 use App\Entity\Doctor;
+use Liip\TestFixturesBundle\Test\FixturesTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -13,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class DoctorTest extends KernelTestCase
 {
     use EntityTestCaseTrait;
+    use FixturesTrait;
 
     public function getEntity(): Doctor
     {
@@ -25,7 +27,14 @@ class DoctorTest extends KernelTestCase
 
     public function testValidEntity(): void
     {
+        $this->loadFixtureFiles([dirname(__DIR__) . '/fixtures/doctor.yaml']);
         $this->assertHasError($this->getEntity(), 0);
+    }
+
+    public function testInvalidNonUniqueEntity(): void
+    {
+        $this->loadFixtureFiles([dirname(__DIR__) . '/fixtures/doctor.yaml']);
+        $this->assertHasError($this->getEntity()->setName('bernard'), 1);
     }
 
     public function testInvalidBlankNameEntity(): void

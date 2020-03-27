@@ -3,6 +3,7 @@
 namespace App\Tests\Entity;
 
 use App\Entity\Contact;
+use Liip\TestFixturesBundle\Test\FixturesTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -13,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class ContactTest extends KernelTestCase
 {
     use EntityTestCaseTrait;
+    use FixturesTrait;
 
     public function getEntity()
     {
@@ -21,9 +23,16 @@ class ContactTest extends KernelTestCase
             ->setLang('Français');
     }
 
-    public function testValidEntity()
+    public function testValidEntity(): void
     {
+        $this->loadFixtureFiles([dirname(__DIR__) . '/fixtures/contact.yaml']);
         $this->assertHasError($this->getEntity(), 0);
+    }
+
+    public function testInvalidNonUniqueEntity(): void
+    {
+        $this->loadFixtureFiles([dirname(__DIR__) . '/fixtures/contact.yaml']);
+        $this->assertHasError($this->getEntity()->setNumber("+243892530482"), 1);
     }
 
     public function testInvalidBlankNumberEntity(): void

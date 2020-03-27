@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -13,6 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     attributes={"pagination_client_enabled"=true}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
+ * @UniqueEntity("number")
  */
 class Contact
 {

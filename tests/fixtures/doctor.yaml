@@ -1,0 +1,7 @@
+App\Entity\Doctor:
+    Doctor:
+        name: "bernard"
+        number: "+243892530482"
+        profile: "https://devs-cast.com/profile.jpg"
+        region: "lubumbashi - haut-katanga"
+

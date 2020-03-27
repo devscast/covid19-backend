@@ -1,0 +1,4 @@
+App\Entity\Contact:
+    Contact:
+        number: "+243892530482"
+        lang: "Lignala"
