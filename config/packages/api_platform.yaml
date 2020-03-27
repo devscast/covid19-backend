@@ -9,8 +9,8 @@ api_platform:
     enable_swagger: true
     enable_swagger_ui: true
     enable_re_doc: false
-    enable_entrypoint: false
-    enable_docs: false
+    enable_entrypoint: true
+    enable_docs: true
 
     collection:
         exists_parameter_name: 'exists'
@@ -36,6 +36,8 @@ api_platform:
     swagger:
         versions: [3]
     formats:
+        jsonld:
+            mime_types: ['application/ld+json']
         json:
             mime_types: ['application/json']
         html:
