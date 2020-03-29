@@ -24,8 +24,7 @@ class JHUAPIService
     public function __construct(
         HttpClientInterface $client,
         LoggerInterface $logger
-    )
-    {
+    ) {
         $this->client = $client;
         $this->logger = $logger;
     }
