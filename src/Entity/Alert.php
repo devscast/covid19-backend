@@ -67,6 +67,38 @@ class Alert
      */
     private ?string $status = null;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank()
+     */
+    private ?int $age = null;
+
+    /**
+     * @ORM\Column(type="string", length=1, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Choice({"M", "F"})
+     */
+    private ?string $sex;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     * @Assert\NotNull()
+     */
+    private ?bool $wellKnownCenter = null;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     * @Assert\NotNull()
+     */
+    private ?bool $infectedRelatives = null;
+
+    /**
+     * @todo make choice dynamic with custom constraint
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Choice({1, 2, 3, 4, 5})
+     */
+    private ?int $gesturesBarriersLevel = null;
 
     /**
      * Alert constructor.
@@ -230,6 +262,111 @@ class Alert
     public function setStatus(?string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    /**
+     * @param int|null $age
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setAge(?int $age): self
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getSex(): ?string
+    {
+        return $this->sex;
+    }
+
+    /**
+     * @param string|null $sex
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setSex(?string $sex): self
+    {
+        $this->sex = $sex;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getWellKnownCenter(): ?bool
+    {
+        return $this->wellKnownCenter;
+    }
+
+    /**
+     * @param bool|null $wellKnownCenter
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setWellKnownCenter(?bool $wellKnownCenter): self
+    {
+        $this->wellKnownCenter = $wellKnownCenter;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getInfectedRelatives(): ?bool
+    {
+        return $this->infectedRelatives;
+    }
+
+    /**
+     * @param bool|null $infectedRelatives
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setInfectedRelatives(?bool $infectedRelatives): self
+    {
+        $this->infectedRelatives = $infectedRelatives;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function getGesturesBarriersLevel(): ?int
+    {
+        return $this->gesturesBarriersLevel;
+    }
+
+    /**
+     * @param int|null $gesturesBarriersLevel
+     * @return $this
+     * @author bernard-ng <ngandubernard@gmail.com>
+     */
+    public function setGesturesBarriersLevel(?int $gesturesBarriersLevel): self
+    {
+        $this->gesturesBarriersLevel = $gesturesBarriersLevel;
 
         return $this;
     }

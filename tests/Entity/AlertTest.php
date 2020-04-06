@@ -23,12 +23,77 @@ class AlertTest extends KernelTestCase
             ->setLng('-11.632240')
             ->setSymptoms('some info')
             ->setCreatedAt(new \DateTime('now'))
-            ->setInfos('some info');
+            ->setInfos('some info')
+            ->setSex('M')
+            ->setAge(34)
+            ->setWellKnownCenter(false)
+            ->setInfectedRelatives(false)
+            ->setGesturesBarriersLevel('3');
     }
 
     public function testValidEntity(): void
     {
         $this->assertHasError($this->getEntity(), 0);
+    }
+
+    public function testHighGesturesBarriersLevelEntity(): void
+    {
+        $this->assertHasError(
+            $this->getEntity()->setGesturesBarriersLevel('0'),
+            1
+        );
+        $this->assertHasError(
+            $this->getEntity()->setGesturesBarriersLevel('-6'),
+            1
+        );
+        $this->assertHasError(
+            $this->getEntity()->setGesturesBarriersLevel('9'),
+            1
+        );
+        $this->assertHasError(
+            $this->getEntity()->setGesturesBarriersLevel('16'),
+            1
+        );
+    }
+
+    public function testStringToBooleanEntity(): void
+    {
+        $this->assertHasError(
+            $this->getEntity()->setWellKnownCenter('1'),
+            0
+        );
+        $this->assertHasError(
+            $this->getEntity()->setWellKnownCenter('0'),
+            0
+        );
+        $this->assertHasError(
+            $this->getEntity()->setInfectedRelatives('0'),
+            0
+        );
+    }
+
+    public function testValidSexEntity(): void
+    {
+        $this->assertHasError($this->getEntity()->setSex('M'), 0);
+        $this->assertHasError($this->getEntity()->setSex('F'), 0);
+    }
+
+    public function testInvalidSexEntity(): void
+    {
+        $this->assertHasError($this->getEntity()->setSex('FM'), 1);
+        $this->assertHasError($this->getEntity()->setSex(null), 1);
+    }
+
+    public function testInvalidBlankSexEntity(): void
+    {
+        $this->assertHasError($this->getEntity()->setSex(''), 2);
+    }
+
+    public function testInvalidBlankAgeEntity(): void
+    {
+        $this->assertHasError($this->getEntity()->setAge(null), 1);
+        $this->expectException(\TypeError::class);
+        $this->assertHasError($this->getEntity()->setAge(''), 1);
     }
 
     public function testInvalidBlankNumberEntity(): void
