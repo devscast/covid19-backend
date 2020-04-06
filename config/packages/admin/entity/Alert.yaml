@@ -2,7 +2,7 @@ easy_admin:
     entities:
         Alertes:
             class: App\Entity\Alert
-            disabled_actions: ['delete', 'new']
+            disabled_actions: ['new']
             list:
                 fields: ['id', 'number', 'lat', 'lng', 'age', 'sex', 'symptoms']
             form:
