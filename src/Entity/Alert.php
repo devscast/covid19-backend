@@ -84,13 +84,13 @@ class Alert
      * @ORM\Column(type="boolean", nullable=true)
      * @Assert\NotNull()
      */
-    private ?bool $wellKnownCenter = null;
+    private ?string $wellKnownCenter = null;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
      * @Assert\NotNull()
      */
-    private ?bool $infectedRelatives = null;
+    private ?string $infectedRelatives = null;
 
     /**
      * @todo make choice dynamic with custom constraint
