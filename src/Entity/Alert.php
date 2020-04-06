@@ -309,20 +309,20 @@ class Alert
     }
 
     /**
-     * @return bool|null
+     * @return string|null
      * @author bernard-ng <ngandubernard@gmail.com>
      */
-    public function getWellKnownCenter(): ?bool
+    public function getWellKnownCenter(): ?string
     {
         return $this->wellKnownCenter;
     }
 
     /**
-     * @param bool|null $wellKnownCenter
+     * @param string|null $wellKnownCenter
      * @return $this
      * @author bernard-ng <ngandubernard@gmail.com>
      */
-    public function setWellKnownCenter(?bool $wellKnownCenter): self
+    public function setWellKnownCenter(?string $wellKnownCenter): self
     {
         $this->wellKnownCenter = $wellKnownCenter;
 
@@ -330,20 +330,20 @@ class Alert
     }
 
     /**
-     * @return bool|null
+     * @return string|null
      * @author bernard-ng <ngandubernard@gmail.com>
      */
-    public function getInfectedRelatives(): ?bool
+    public function getInfectedRelatives(): ?string
     {
         return $this->infectedRelatives;
     }
 
     /**
-     * @param bool|null $infectedRelatives
+     * @param string|null $infectedRelatives
      * @return $this
      * @author bernard-ng <ngandubernard@gmail.com>
      */
-    public function setInfectedRelatives(?bool $infectedRelatives): self
+    public function setInfectedRelatives(?string $infectedRelatives): self
     {
         $this->infectedRelatives = $infectedRelatives;
 
