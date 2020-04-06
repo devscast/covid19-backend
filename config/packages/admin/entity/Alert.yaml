@@ -3,6 +3,8 @@ easy_admin:
         Alertes:
             class: App\Entity\Alert
             disabled_actions: ['delete', 'new']
+            list:
+                fields: ['id', 'number', 'lat', 'lng', 'age', 'sex', 'symptoms']
             form:
                 fields:
                     - {property: 'number'}
