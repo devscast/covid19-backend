@@ -29,7 +29,7 @@
         "symfony/security-bundle": "5.0.*",
         "symfony/serializer-pack": "*",
         "symfony/string": "5.0.*",
-        "symfony/translation": "5.0.*",
+        "symfony/translation": "5.2.*",
         "symfony/twig-pack": "*",
         "symfony/twilio-notifier": "5.0.*",
         "symfony/validator": "5.0.*",
