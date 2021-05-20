@@ -28,7 +28,7 @@
         "symfony/process": "5.0.*",
         "symfony/security-bundle": "5.0.*",
         "symfony/serializer-pack": "*",
-        "symfony/string": "5.0.*",
+        "symfony/string": "5.2.*",
         "symfony/translation": "5.0.*",
         "symfony/twig-pack": "*",
         "symfony/twilio-notifier": "5.0.*",
